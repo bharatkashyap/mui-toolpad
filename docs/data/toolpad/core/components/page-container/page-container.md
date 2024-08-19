@@ -25,8 +25,8 @@ For example, under the following navigation structure:
   branding={{ title: 'ACME' }}
   navigation={[
     {
-      segment: 'home',
-      title: 'Home',
+      segment: 'inbox',
+      title: 'Inbox',
       children: [
         {
           segment: 'orders',
@@ -40,7 +40,7 @@ For example, under the following navigation structure:
 </AppProvider>
 ```
 
-The breadcrumbs contains **ACME / Home / Orders** when you visit the path **/home/orders**, and the page has a title of **Orders**.
+The breadcrumbs contains **ACME / Inbox / Orders** when you visit the path **/inbox/orders**, and the page has a title of **Orders**.
 
 {{"demo": "TitleBreadcrumbsPageContainer.js", "height": 300, "hideToolbar": true}}
 

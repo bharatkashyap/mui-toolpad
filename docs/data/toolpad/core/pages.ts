@@ -98,8 +98,12 @@ const pages: MuiPage[] = [
       {
         pathname: '/toolpad/core/api/components-group',
         subheader: 'Components',
+        children: pagesApi,
+      },
+      {
+        pathname: '/toolpad/core/api/hooks-group',
+        subheader: 'Hooks',
         children: [
-          ...pagesApi,
           {
             pathname: '/toolpad/core/react-use-notifications/api/',
             title: 'useNotifications',
