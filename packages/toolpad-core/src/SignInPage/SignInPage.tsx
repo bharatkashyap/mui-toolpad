@@ -20,7 +20,12 @@ import Stack from '@mui/material/Stack';
 import { LinkProps } from '@mui/material/Link';
 import { BrandingContext, DocsContext, RouterContext } from '../shared/context';
 
-const IconProviderMap = new Map<string, React.ReactNode>([
+type SupportedOAuthProvider = 'github' | 'google' | 'facebook';
+
+// https://authjs.dev/reference/core/providers#providertype
+export type SupportedAuthProvider = SupportedOAuthProvider | 'credentials';
+
+const IconProviderMap = new Map<SupportedAuthProvider, React.ReactNode>([
   ['github', <GitHubIcon key="github" />],
   ['credentials', <PasswordIcon key="credentials" />],
   [
@@ -52,11 +57,11 @@ const IconProviderMap = new Map<string, React.ReactNode>([
 export interface AuthProvider {
   /**
    * The unique identifier of the authentication provider.
-   * @default ''
+   * @default undefined
    * @example 'google'
    * @example 'github'
    */
-  id: string;
+  id: SupportedAuthProvider;
   /**
    * The name of the authentication provider.
    * @default ''
